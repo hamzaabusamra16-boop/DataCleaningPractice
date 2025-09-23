@@ -1,4 +1,4 @@
-# Penguin Clustering & Classification Project 🐧
+# py
 
 هذا المشروع يستخدم **KMeans Clustering** لتقسيم بيانات البطاريق إلى مجموعات، ثم يتم تطبيق **Logistic Regression** لتصنيف هذه المجموعات.
 
