@@ -13,7 +13,7 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.ensemble import VotingRegressor
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import KNeighborsRegressor
-
+import joblib
 from sklearn.tree import DecisionTreeRegressor
 
 def projact_one():
@@ -25,6 +25,7 @@ def projact_one():
    model3 = RandomForestRegressor()
    model4 = DecisionTreeRegressor()
    model = VotingRegressor([("Linear",model1),("KN",model2),("RandomForest",model3),("tree",model4)])
+   joblib.dump(model,"Model_LinearRegression.pkl")
    x = data.drop(["MEDV"],axis=1)
    y = data["MEDV"]
    data = data.sort_values(by =["RM"])
@@ -47,6 +48,7 @@ def projact_two():
     model3 = RandomForestClassifier()
     model4 = DecisionTreeClassifier()
     model = VotingClassifier([("classification",model1),("KN",model2),("RandomForest",model3),("tree",model4)])
+    joblib.dump(model,"Model_classification.pkl")
 
     x = data.drop(["species"],axis=1)
     y = data["species"]
